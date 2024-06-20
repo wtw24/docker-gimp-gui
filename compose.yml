@@ -1,0 +1,11 @@
+services:
+  gimp:
+    container_name: "gimp"
+    build:
+      context: "docker"
+      dockerfile: "Dockerfile"
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    network_mode: host
